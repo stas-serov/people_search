@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
-using System.Drawing;
 
 namespace people_search
 {
@@ -22,7 +21,7 @@ namespace people_search
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-            var info = new FileInfo("..\\..\\..\\people_search\\config.txt");
+            var info = new FileInfo("..\\..\\..\\people_search\\Data\\config.txt");
             if(!info.Exists)
             {
                 MessageBox.Show("Settings file are not exists! Shutdown!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -35,7 +34,7 @@ namespace people_search
                 this.Close();
                 return;
             }
-            string [] s = File.ReadAllLines("..\\..\\..\\people_search\\config.txt");
+            string [] s = File.ReadAllLines("..\\..\\..\\people_search\\Data\\config.txt");
             if(s.Length < 6)
             {
                 MessageBox.Show("the settings file is not complete! Please, check that and try again!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -70,7 +69,7 @@ namespace people_search
                 if(person.Count == 0)
                 {
                     MessageBox.Show("The system could not find such a person. Check input data and thy again!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\config.txt", false);
+                    Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\Data\\config.txt", false);
                     return;
                 }
                 richTextBox_full_information.Text = "Имя (укр): " + person[0].first_name_u + "\n" + "Фамилия (укр): " + person[0].last_name_u + "\n" + "Отчество (укр): " + person[0].middle_name_u + "\n" +
@@ -79,7 +78,7 @@ namespace people_search
                     "Дата исчезновения: " + person[0].lost_date.ToString() + "\n" + "Место исчезновения: " + person[0].lost_place + "\n" + "Дата рождения: " + person[0].birth_date.ToString() + "\n" + 
                     "Пол: " + person[0].sex + "\n" + "Контактная информация: " + person[0].contact;
                 pictureBox_photo.Image = Operations.person_photo(person[0].photoid, path_photo1, path_photo2);
-                Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\config.txt", true);
+                Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\Data\\config.txt", true);
                 if(person.Count > 1)
                 {
                     button_prev_person.Visible = true;
@@ -93,7 +92,7 @@ namespace people_search
                 if (person.Count == 0)
                 {
                     MessageBox.Show("The system could not find such a person. Check input data and thy again!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\config.txt", false);
+                    Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\Data\\config.txt", false);
                     return;
                 }
                 richTextBox_full_information.Text = "Имя (укр): " + person[0].first_name_u + "\n" + "Фамилия (укр): " + person[0].last_name_u + "\n" + "Отчество (укр): " + person[0].middle_name_u + "\n" +
@@ -102,7 +101,7 @@ namespace people_search
                     "Дата исчезновения: " + person[0].lost_date.ToString() + "\n" + "Место исчезновения: " + person[0].lost_place + "\n" + "Дата рождения: " + person[0].birth_date.ToString() + "\n" +
                     "Пол: " + person[0].sex + "\n" + "Контактная информация: " + person[0].contact;
                 pictureBox_photo.Image = Operations.person_photo(person[0].photoid, path_photo1, path_photo2);
-                Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\config.txt", true);
+                Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\Data\\config.txt", true);
                 if (person.Count > 1)
                 {
                     button_prev_person.Visible = true;
@@ -116,7 +115,7 @@ namespace people_search
                 if (person.Count == 0)
                 {
                     MessageBox.Show("The system could not find such a person. Check input data and thy again!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\config.txtt", false);
+                    Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\Data\\config.txtt", false);
                     return;
                 }
                 richTextBox_full_information.Text = "Имя (укр): " + person[0].first_name_u + "\n" + "Фамилия (укр): " + person[0].last_name_u + "\n" + "Отчество (укр): " + person[0].middle_name_u + "\n" +
@@ -125,7 +124,7 @@ namespace people_search
                     "Дата исчезновения: " + person[0].lost_date.ToString() + "\n" + "Место исчезновения: " + person[0].lost_place + "\n" + "Дата рождения: " + person[0].birth_date.ToString() + "\n" +
                     "Пол: " + person[0].sex + "\n" + "Контактная информация: " + person[0].contact;
                 pictureBox_photo.Image = Operations.person_photo(person[0].photoid, path_photo1, path_photo2);
-                Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\config.txt true", true);
+                Operations.write_results(textBox_surname.Text, textBox_name.Text, textBox_patronomic.Text, "..\\..\\..\\people_search\\Data\\config.txt true", true);
                 if (person.Count > 1)
                 {
                     button_prev_person.Visible = true;

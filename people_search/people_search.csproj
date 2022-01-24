@@ -82,9 +82,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="ClassDiagram1.cd" />
-    <None Include="database.json" />
-    <None Include="database_photo1.json" />
-    <None Include="database_photo2.json" />
+    <None Include="Data\database.json" />
+    <None Include="Data\database_photo1.json" />
+    <None Include="Data\database_photo2.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,9 +100,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="author_photo.png" />
-    <Content Include="config.txt" />
-    <Content Include="icon.ico" />
+    <Content Include="Data\author_photo.png" />
+    <Content Include="Data\config.txt" />
+    <Content Include="Data\icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
